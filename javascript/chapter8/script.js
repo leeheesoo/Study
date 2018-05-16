@@ -13,23 +13,26 @@ function buildCalendar(){
   calendarTitle.innerHTML = today.getFullYear()+"년 "+ (today.getMonth()+1)+"월";
 
   //기존에 테이블에 잇던 달력 내용 삭제
-  while(calendar.rows.length -1){
+  while(calendar.rows.length -1){ //요일은 고정
     calendar.deleteRow(calendar.rows.length -1);
   }
   var row;
   row = calendar.insertRow();
-  var cnt =0;
-  // 1일이 시작되는 칸을 맞추어줌
+  var cnt = 0;
 
-  for ( i=0; i <firstDate.getDay(); i++) {
-    cell =row.insertCell();
+  // 1일이 시작되는 칸을 맞춤
+  for ( var i=0; i <firstDate.getDay(); i++) {
+    cell = row.insertCell(); //추가되는 td
     cnt = cnt + 1;
+    //console.log(firstDate.getDay())
+
 }
   //달력 출력
-  for(i=1; i<=lastDate.getDate(); i++){
+  for(var i=1; i<=lastDate.getDate(); i++){
     cell =row.insertCell();
     cell.innerHTML = i;
-    cnt = cnt + 1;
+    cnt = cnt+1 ;
+    //console.log(cnt)
     if (cnt%7 == 0)    //1주=7일
      row = calendar.insertRow();
 
