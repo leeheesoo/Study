@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 960px;
+  height: 80px;
+  overflow: hidden;
+  margin: 0px auto;
+}
+
+header h1 {
+  float: left;
+  margin-top: 20px;
+}
+
+header nav {
+  float: right;
+  margin-top: 45px;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: #333;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+main .banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 960px;
+  height: 180px;
+  margin: 0 auto;
+  background: #69f;
+  margin-bottom: 20px;
+}
+
+main .banner .figure_header {
+  width: 600px;
+  text-align: center;
+  color: white;
+}
+
+main .banner .figure_header h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+main section {
+  width: 960px;
+  margin: 0 auto;
+}
+
+main section article {
+  width: 66%;
+  overflow: hidden;
+  float: left;
+}
+
+main section article #map {
+  width: 100%;
+  height: 500px;
+  background-color: #ccc;
+}
+
+main section article p {
+  margin-bottom: 20px;
+}
+
+main section aside {
+  float: right;
+  width: 34%;
+  box-sizing: border-box;
+  padding: 20px;
+  padding-top: 0;
+}
+
+main section fieldset {
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+main section legend {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+main section label {
+  display: block;
+}
+
+main section input, main section textarea {
+  border: none;
+  background: #ddd;
+  padding: 10px;
+  resize: none;
+}
+
+main section label, main section input, main section textarea {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+main section button {
+  background: #fe6081;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+}
+/*# sourceMappingURL=style.css.map */
