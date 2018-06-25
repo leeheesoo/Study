@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <title>계산기</title>
+  <meta name="author" content="tailofmoon">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<style>
+    caption{ font-size: 32px; }
+    table{ width: 320px; }
+    table,th{ background: #333; }
+    th{ padding-right: 10px; height:80px;}
+    td{
+      height: 75px;
+      text-align: center;
+    }
+    th > input{
+      width: 100%;
+      border: none;
+      background: #333;
+      color: white;
+      text-align: right;
+      font-size:48px;
+    }
+    td > input[type="button"]{
+      width: 100%;
+      height:inherit;
+      color:#333;
+      font-size:36px;
+      border: none;
+    }
+    td > input[type="button"]:hover{
+      background: #999;
+    }
+    td:last-child > input{
+       background: orange;
+        color:white;
+    }
+</style>
+<body>
+
+<form name="cal">
+  <table>
+    <caption>계산기</caption>
+    <tr>
+      <th colspan="4"><input type="text" readonly name="result" value="0"></th>
+    </tr>
+    <tr>
+      <td><input type="button" value="7"></td>
+      <td><input type="button" value="8"></td>
+      <td><input type="button" value="9"></td>
+      <td><input type="button" value="+"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="4"></td>
+      <td><input type="button" value="5"></td>
+      <td><input type="button" value="6"></td>
+      <td><input type="button" value="-"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="1"></td>
+      <td><input type="button" value="2"></td>
+      <td><input type="button" value="3"></td>
+      <td><input type="button" value="*"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" value="0"></td>
+      <td><input type="button" value="%"></td>
+      <td><input type="button" value="/"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" class="cls_btn" value="clear" ></td>
+      <td colspan="2"><input type="button" class="result_btn" value="=" ></td>
+    </tr>
+  </table>
+</form>
+
+<script>
+
+  //변수선언
+  var form = document.forms['cal'];
+  var input = form.getElementsByTagName['input'];
+  var clsBtn = document.getElementsByClassName('cls_btn');
+  var resultBtn = document.getElementsByClassName('result_btn');
+  //var button = document.querySelector('num-btn');
+  
+  // button.onclick = function(){
+  //   calc(this.value);
+  // }
+  
+  //clear 초기화
+  function clear(){
+    form['result'].value = 0 ;
+  }
+  
+  // 계산처리
+  function calc(value){
+      if( form['result'].value == 0 ){
+          form['result'].value = "";
+      }
+  
+      form['result'].value += value;
+  };
+  
+  //결과처리
+  function resultValue(){
+    var result = ducoment.forms['cal']['result'];
+    var calc = eval(result.value);
+    input['result'].value = calc;
+  }
+  
+  
+  for(var i = 0; i <input.length; i++){
+    if(input[i].value != '=' && input[i].value != 'clear'){
+      input[i].onclick = function(){
+        calc(this.value);
+      }
+    } 
+  } 
+  
+  
+  clsBtn.onclick = function(){
+    clear();
+  }
+  
+  
+  resultBtn.onclick = function(){
+    resultValue();
+  }
+</script>
+
+</body>
+</html>
+
